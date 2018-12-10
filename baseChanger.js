@@ -47,5 +47,5 @@ function baseChange(number, fromBase, toBase, showSteps = false) {
   if (showSteps) console.log(`Remainder list: ${result.split("")}`);
   if (showSteps) console.log(`Reverse this list (${result.split("")}) to get ${result.split("").reverse().join("")}. This is the output.`);
   result = result.split("").reverse().join("");
-  return (toBase <= 10) ? Number(result) : result;
+  return (toBase <= 10 && Number(result) < Number.MAX_SAFE_INTEGER) ? Number(result) : result;
 }
