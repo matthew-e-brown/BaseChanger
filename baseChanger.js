@@ -27,7 +27,7 @@ function baseChange(number, fromBase, toBase, showSteps = false) {
   if (showSteps) console.log(`Convert to decimal (start from zero, add digits in decimal):`);
   let decimal = 0;
   for (let i = 0; i < numString.length; i++) {
-    let digit = (fromBase != 64) ? DIGITORDER.indexOf(fromBase <= 37 ? numString[i].toUpperCase() : numString[i]) : DIGITS_SIXTY_FOUR.indexOf(numString[i]);
+    let digit = (fromBase != 64) ? DIGITORDER.indexOf(fromBase <= 35 ? numString[i].toUpperCase() : numString[i]) : DIGITS_SIXTY_FOUR.indexOf(numString[i]);
     if (showSteps) console.log(`${i}: Current Digit: ${(digit >= 10) ? numString[i] + " =" : ""} ${digit}`);
     if (showSteps) console.log(`Add (digit * fromBase ^ digit_place) to ${decimal}: ${digit} * (${fromBase} ** ${i}) = ${Number(digit) * (fromBase ** i)}`);
     decimal += Number(digit) * (fromBase ** i);
